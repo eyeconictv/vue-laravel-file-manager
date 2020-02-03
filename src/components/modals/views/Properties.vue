@@ -125,6 +125,7 @@ export default {
       }).then((response) => {
         if (response.data.result.status === 'success') {
           this.url = response.data.url;
+          this.copyToClipboard(this.url)
         }
       });
     },
