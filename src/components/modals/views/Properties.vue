@@ -124,7 +124,7 @@ export default {
         path: this.selectedItem.path,
       }).then((response) => {
         if (response.data.result.status === 'success') {
-          this.url = response.data.url;
+          this.url = encodeURIComponent(response.data.url).replace(/%20/g, "+");;
           this.copyToClipboard(this.url)
         }
       });
